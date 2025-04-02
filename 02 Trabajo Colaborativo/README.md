@@ -1,0 +1,1 @@
+Esta carpeta contiene el cuestionario n2 ademas del ejercicio de conflicto, con el mismo solucionado.
