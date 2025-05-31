@@ -27,7 +27,7 @@ else:
     print("Por favor ingrese un numero par")      
     
 #EJERCICIO 4.
-# De acuerdo a la edad del usuario se ke dira a que franja etarea pertenece
+# De acuerdo a la edad del usuario se le dira a que franja etarea pertenece
 edad = int(input("Por favor ingrese su edad "))
 if edad < 12:
     print("Usted es un niño/a")
