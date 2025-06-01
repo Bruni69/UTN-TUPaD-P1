@@ -1,26 +1,35 @@
 # TRABAJO INTEGRADOR  PROGRAMACION.
 # ANALISIS DE ALGORITMOS.
-# Se comparara el mismo ejercicio con un bucle for y luego con una funcion para asi luego evaluar
 
-#Factorial
+import time
 
-def fact_recur(a):
-    if a == 0:
-        return 1
-    else:
-        return a*fact_recur(a-1)
-                                
-a=int(input("elija un numero: "))
-print(f"el factorial de {a} es: {fact_recur(a)}")
+def es_palindromo(palabra):
+    palabra = palabra.lower()
+    if len(palabra) <= 1:
+        return True
+    if palabra[0] != palabra[-1]:
+        return False
+    return es_palindromo(palabra[1:-1])
 
+def sera_palindromo(palabra):
+    palabra = palabra.lower().replace(" ", "")
+    return palabra == palabra[::-1]
 
-# Crea un programa que calcule la suma de todos los números comprendidos entre 0 y un
-# número entero positivo indicado por el usuario.
-num = int(input("ingrese un entero: "))
-suma = 0
-for i in range(num+1):
-    suma = suma + i
-print("la suma de todos los numeros es: ",suma)
+# Palabras de prueba
+palabra1 = "Reconocer"  # True
+palabra2 = "Constantinopla"  # False
 
+# Medición para la función recursiva
+inicio_rec = time.time()
+resultado1_rec = es_palindromo(palabra1)
+resultado2_rec = es_palindromo(palabra2)
+fin_rec = time.time()
+print(f"Función recursiva: {resultado1_rec}, {resultado2_rec} | Tiempo: {fin_rec - inicio_rec:.8f} segundos")
 
+# Medición para la función con slicing
+inicio_slice = time.time()
+resultado1_slice = sera_palindromo(palabra1)
+resultado2_slice = sera_palindromo(palabra2)
+fin_slice = time.time()
+print(f"Función con slicing: {resultado1_slice}, {resultado2_slice} | Tiempo: {fin_slice - inicio_slice:.8f} segundos")
 
