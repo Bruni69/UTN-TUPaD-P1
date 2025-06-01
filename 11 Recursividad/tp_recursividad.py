@@ -62,3 +62,23 @@ def dec_bin(n):
 num=int(input("ingrese un decimalpara realizar la conver"))
 print(f"{num} en binario es: {dec_bin(num)}")
 
+#Ejercicio 5
+#palindromo true o false
+
+def es_palindromo(palabra):
+    # Convertimos la palabra a minúsculas 
+    palabra = palabra.lower()
+    # Caso base: si la longitud es 0 o 1, es un palíndromo
+    if len(palabra) <= 1:
+        return True
+    # Comparar el primer y el último carácter
+    if palabra[0] != palabra[-1]:
+        return False
+    # Llama a la funcion recursiva sin los extremos
+    return es_palindromo(palabra[1:-1])
+
+# Ejemplo de uso:
+palabra = "Python"
+print(es_palindromo(palabra))  # Debería devolver False
+palabra = "madaM"
+print(es_palindromo(palabra))  # Debería devolver True
